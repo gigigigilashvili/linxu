@@ -1,0 +1,92 @@
+დაწერეთ სკრიფტი რომელიც მომხმარებელს მოთხოვს შეიყვანოს სახელი და გვარი ასევე ჯგუფი.
+დამატებით მოითხოვოს შეიტანო ოთხი რიცხვი და დააბრუნებს ამ 4 რიცხვის ჯამს, ნამრავლსა და
+საშუალო არითმეტიკულს, ასევე პირველი და მესამე რიცხვცს ჯამს გასამკეცებულს.
+
+Read -p “Saxeli: ” first_name
+Read -p “Gvari:” last_name
+read -p &quot;Jgufi:” group
+read -p &quot;Ricxvi:” num1
+read -p &quot;Ricxvi” num2
+read -p &quot;Ricxvi” num1
+read -p &quot;Ricxvi&quot; num2
+read -p &quot;Ricxvi” num3
+read -p &quot;Ricxvi&quot; num4
+jami =$((num1 + num2 + num3 + num4))
+namravli = $((num1 * num2 * num3 * num4))
+sashualo = $(( (num1 + num2 + num3 + num4) / 4 ))
+bolo = $(( (num1 + num3)*3))
+
+
+დაწერე სკრიპტი რომელიც გამოიყენებს შენ შექმნილ ფუნქცია quiz6_გვარი რომელიც აბრუნებს
+სტრქოქონს BTU-s studenti შენი სახელი გვარი, ასევე მიმდინარე თარიღის ინფოს. ამავე სქკრიფტში ეს
+ფუნქცია იქნება გამოძახებული ციკლით 23-ჯერ.
+
+quiz6_saxeligvari(){
+Echo “Btu-s student $1 $2 - $(date)}
+}”
+read -p “Studentis saxeli: ” saxeli
+read -p “Studentis gvari: ” gvari
+for ((i=1; i&lt;=23;i++)); do
+res =$(quiz6_saxeligvari “$saxeli” “$gvari” )
+echo “iteration $i: $res”
+
+დაწერეთ სკრიფტი რომელის მომხმარებელს აარჩვინებს (მენიუ) ერთ-ერთ ქომანდს. ეს ქომანდებია:
+1 - ვინ იყო სისტემაში შესული; 2 - ამოკითხული ტექსის ტრანსფორმაცია; 3 - გაამოაქვს ოპერატიული
+მეხსიერების მდგომარეობა; 4 - გამოაქვს მიმდინარე თვის კალენდარი; 5 - გამოიტანს დისკის
+დანაყოფების შესახებ ინფორმმაციას; 6 - ყოფს დიდ ფაილს სასურველ ზომებად; 7 -კონკრეტული
+დომეინის უკან მყოფი აიპის გამომტანი; 8 - საბაზისო კალკულატორი; 9 - ფაილის ტიპობრიობა; 10 -
+რიცხვითი მიმდევრობის შექმნა; 11 - პროცესის პრიორიტეტის შეცვლა; 12 - მფლობელის შეცვლა;
+სკრიპტს არჩევანი გაკეთების შემდგომ გამოაქვს სტრიქონი studento sheni სახალი და გვარი airchie და
+ბრძანების სახელი.
+
+სკრიპტი:display_menu(){
+Echo “menu:”
+Echo “1-log in”
+Echo “2-text transformation”
+Echo “RAM”
+Echo “3-RAM”
+Echo “4-calendar”
+Echo “5-disc”
+Echo “6-files”
+Echo “7-IP”
+Echo “8-calculator”
+Echo “9-file type”
+Echo “10-mimdevroba”
+Echo “11-process priority”
+Echo “12-change owner”
+Echo “0-Exit”
+}
+Execute_command() {
+Case $1 in
+1) Who; command_name=”log in”; ;
+2) Echo “text;”; read text; echo “$text” | tr ‘a-z’ ‘A-Z’ ; command_name=”text
+transformation”;;
+3) Free -h; command_name=”RAM”;;
+4) Cal; command_name=&quot;calendar”;;
+5) Df -h; command_name=&quot;disc”;;
+6) Echo “path:”; read file_path; echo “size:”; read size; split –bytes=$size $file_path;
+command_name=”files”;;
+7) Echo “expression:”; read expression; echo “$expression”
+8) Echo “domain:”
+9) Echo “domain:”; read expression; echo “$expression” | bc; command_name=”calculator”;;
+
+
+დაწერეთ სკრიპტი რომელსაც ექნება 3 ოფცია d, f, h, j და g. აქედან g ოფციას სჭირდება არგუმენტი
+სტრქონული ტიპის შენი გვარი. d ოფციას გამოქონდეს სწისტემის დატვირთულობაზე ინფორმაცია. f
+ოფციას გამოქონდეს თუ ვინ იყო წარსულში დალოგინებული. H ოფციას გამოქონდეს fortun-ის
+შემთხვევითი ტექსტი შეფერადებული. j ოფციას სქრინსეივერი მატარებელი რომელიც CTRL+C-თი
+მოკვდავია. g ოფციას დართული არგუმენტიტისთვის გამოჰქონდეს სტრიქონი shen xar btu-eli da
+sheni gvaria და არგუმენტის გადაცემული მნიშვნელობა.
+
+
+﻿
+
+while getopts "dfhj:g:" opt; do 
+> case $opt in
+> d) uptime ;;
+> f) last -ad ;;
+> h) fortune | lolcat ;;
+> j) sl ;;
+> g) echo "shen xar btu-eli da sheni gvariaa: $gvari
+> esac
+> done
